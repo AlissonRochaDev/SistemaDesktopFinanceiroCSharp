@@ -1,0 +1,12 @@
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\DAO.dll.config
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\DAO.dll
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\DAO.pdb
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\EntityFramework.dll
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\EntityFramework.xml
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\obj\Debug\DAO.csproj.Up2Date
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\obj\Debug\DAO.dll
+C:\Projetos_MS_C#\Curso_Basico_Projeto_Controle_Financeiro\SistemaFinanceiroDesktop\DAO\obj\Debug\DAO.pdb

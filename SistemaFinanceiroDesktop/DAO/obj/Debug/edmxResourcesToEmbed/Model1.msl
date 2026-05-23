@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_financeiro_sab_08ModelStoreContainer" CdmEntityContainer="db_financeiro_sab_08">
+    <EntitySetMapping Name="tb_categoria">
+      <EntityTypeMapping TypeName="db_financeiro_sab_08Model.tb_categoria">
+        <MappingFragment StoreEntitySet="tb_categoria">
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="nome_categoria" ColumnName="nome_categoria" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_conta">
+      <EntityTypeMapping TypeName="db_financeiro_sab_08Model.tb_conta">
+        <MappingFragment StoreEntitySet="tb_conta">
+          <ScalarProperty Name="id_conta" ColumnName="id_conta" />
+          <ScalarProperty Name="banco_conta" ColumnName="banco_conta" />
+          <ScalarProperty Name="agencia_conta" ColumnName="agencia_conta" />
+          <ScalarProperty Name="numero_conta" ColumnName="numero_conta" />
+          <ScalarProperty Name="saldo_conta" ColumnName="saldo_conta" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empresa">
+      <EntityTypeMapping TypeName="db_financeiro_sab_08Model.tb_empresa">
+        <MappingFragment StoreEntitySet="tb_empresa">
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="nome_empresa" ColumnName="nome_empresa" />
+          <ScalarProperty Name="telefone_empresa" ColumnName="telefone_empresa" />
+          <ScalarProperty Name="endereco_empresa" ColumnName="endereco_empresa" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_movimento">
+      <EntityTypeMapping TypeName="db_financeiro_sab_08Model.tb_movimento">
+        <MappingFragment StoreEntitySet="tb_movimento">
+          <ScalarProperty Name="id_movimento" ColumnName="id_movimento" />
+          <ScalarProperty Name="tipo_movimento" ColumnName="tipo_movimento" />
+          <ScalarProperty Name="data_movimento" ColumnName="data_movimento" />
+          <ScalarProperty Name="valor_movimento" ColumnName="valor_movimento" />
+          <ScalarProperty Name="obs_movimento" ColumnName="obs_movimento" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="id_conta" ColumnName="id_conta" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="db_financeiro_sab_08Model.tb_usuario">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nome_usuario" ColumnName="nome_usuario" />
+          <ScalarProperty Name="email_usuario" ColumnName="email_usuario" />
+          <ScalarProperty Name="senha_usuario" ColumnName="senha_usuario" />
+          <ScalarProperty Name="data_cadastro" ColumnName="data_cadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

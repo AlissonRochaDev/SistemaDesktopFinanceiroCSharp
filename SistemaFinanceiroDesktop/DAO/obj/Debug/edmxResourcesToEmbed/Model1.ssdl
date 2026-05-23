@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_financeiro_sab_08Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_categoria">
+    <Key>
+      <PropertyRef Name="id_categoria" />
+    </Key>
+    <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_categoria" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_conta">
+    <Key>
+      <PropertyRef Name="id_conta" />
+    </Key>
+    <Property Name="id_conta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="banco_conta" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="agencia_conta" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="numero_conta" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="saldo_conta" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_empresa">
+    <Key>
+      <PropertyRef Name="id_empresa" />
+    </Key>
+    <Property Name="id_empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_empresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefone_empresa" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="endereco_empresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_movimento">
+    <Key>
+      <PropertyRef Name="id_movimento" />
+    </Key>
+    <Property Name="id_movimento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_movimento" Type="smallint" Nullable="false" />
+    <Property Name="data_movimento" Type="date" Nullable="false" />
+    <Property Name="valor_movimento" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="obs_movimento" Type="varchar" MaxLength="300" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="id_empresa" Type="int" Nullable="false" />
+    <Property Name="id_conta" Type="int" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_usuario" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="email_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="senha_usuario" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="data_cadastro" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tb_categoria_tb_usuario">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="tb_categoria">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_conta_tb_usuario">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+    <End Role="tb_conta" Type="Self.tb_conta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="tb_conta">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_empresa_tb_usuario">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="tb_empresa">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_movimento_tb_categoria">
+    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
+    <End Role="tb_movimento" Type="Self.tb_movimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categoria">
+        <PropertyRef Name="id_categoria" />
+      </Principal>
+      <Dependent Role="tb_movimento">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_movimento_tb_conta">
+    <End Role="tb_conta" Type="Self.tb_conta" Multiplicity="1" />
+    <End Role="tb_movimento" Type="Self.tb_movimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_conta">
+        <PropertyRef Name="id_conta" />
+      </Principal>
+      <Dependent Role="tb_movimento">
+        <PropertyRef Name="id_conta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_movimento_tb_empresa">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_movimento" Type="Self.tb_movimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="tb_movimento">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_movimento_tb_usuario">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+    <End Role="tb_movimento" Type="Self.tb_movimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="tb_movimento">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_financeiro_sab_08ModelStoreContainer">
+    <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_conta" EntityType="Self.tb_conta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_empresa" EntityType="Self.tb_empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_movimento" EntityType="Self.tb_movimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tb_categoria_tb_usuario" Association="Self.FK_tb_categoria_tb_usuario">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_conta_tb_usuario" Association="Self.FK_tb_conta_tb_usuario">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_conta" EntitySet="tb_conta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_empresa_tb_usuario" Association="Self.FK_tb_empresa_tb_usuario">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_movimento_tb_categoria" Association="Self.FK_tb_movimento_tb_categoria">
+      <End Role="tb_categoria" EntitySet="tb_categoria" />
+      <End Role="tb_movimento" EntitySet="tb_movimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_movimento_tb_conta" Association="Self.FK_tb_movimento_tb_conta">
+      <End Role="tb_conta" EntitySet="tb_conta" />
+      <End Role="tb_movimento" EntitySet="tb_movimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_movimento_tb_empresa" Association="Self.FK_tb_movimento_tb_empresa">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_movimento" EntitySet="tb_movimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_movimento_tb_usuario" Association="Self.FK_tb_movimento_tb_usuario">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_movimento" EntitySet="tb_movimento" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

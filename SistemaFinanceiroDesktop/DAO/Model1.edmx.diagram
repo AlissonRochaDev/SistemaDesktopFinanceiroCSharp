@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b6dc746ecb714c67b235b4a197ed0692" Name="Diagram1">
+        <EntityTypeShape EntityType="db_financeiro_sab_08Model.tb_categoria" Width="1.5" PointX="0.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_financeiro_sab_08Model.tb_conta" Width="1.5" PointX="5.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_financeiro_sab_08Model.tb_empresa" Width="1.875" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_financeiro_sab_08Model.tb_movimento" Width="1.5" PointX="2.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_financeiro_sab_08Model.tb_usuario" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_categoria_tb_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_movimento_tb_categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_conta_tb_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_movimento_tb_conta" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_empresa_tb_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_movimento_tb_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_financeiro_sab_08Model.FK_tb_movimento_tb_usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
